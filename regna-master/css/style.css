@@ -752,16 +752,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 
 
-#portfolio .portfolio-item a {
- 
-  margin-right: 15px;
-}
 
-#portfolio .portfolio-item img {
- 
-  
-  transition: all .5s ease-in-out;
-}
 
 
 
@@ -897,8 +888,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 8px 0;
   border-radius: 50%;
   text-align: center;
-  width: 36px;
-  height: 36px;
+  width: 48px;
+  height: 48px;
   transition: 0.3s;
 }
 
