@@ -276,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
 #nav-menu-container {
   position: absolute;
   top: 25%;
-  left: 45%;
+  left: 55%;
 }
 
 @media (max-width: 768px) {
@@ -370,7 +370,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav-toggle i {
-  color: #fff;
+  color: #FDFEFE;
 }
 
 @media (max-width: 768px) {
@@ -404,7 +404,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul li a {
-  color: #fff;
+  color: #FDFEFE;
   font-size: 16px;
   overflow: hidden;
   padding: 10px 22px 10px 15px;
@@ -416,7 +416,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #mobile-nav ul li a:hover {
-  color: #fff;
+  color: #FDFEFE;
 }
 
 #mobile-nav ul li li {
@@ -429,7 +429,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99;
   padding: 15px;
   cursor: pointer;
-  color: #fff;
+  color: #FDFEFE;
 }
 
 #mobile-nav ul .menu-has-children i.fa-chevron-up {
