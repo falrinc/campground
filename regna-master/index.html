@@ -36,7 +36,7 @@
   ======================================================= -->
 </head>
 
-<body>
+<body onload="loaded()">
 
   <!--==========================
   Header
@@ -486,9 +486,7 @@
 
           <div class="col-lg-5 col-md-8">
             <div class="form">
-              <div id="sendmessage">Your message has been sent. Thank you!</div>
-              <div id="errormessage"></div>
-              <form action="" method="post" role="form" class="contactForm">
+              <form action="contact.php" method="post" role="form" class="contactForm" id="cForm" >
                 <div class="form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
                   <div class="validation"></div>
@@ -505,7 +503,7 @@
                   <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
                   <div class="validation"></div>
                 </div>
-                <div class="text-center"><button type="submit">Send Message</button></div>
+                <div class="text-center"><button class="activeButton" type="submit" id="sMessage" >Send Message</button></div>
               </form>
             </div>
           </div>
@@ -528,12 +526,11 @@
     </div>
 
 	<div class="company-info">
-		<
 	</div>
     <div class="container">
 	
       <div class="copyright">
-        &copy; Copyright <strong>Regna</strong>. All Rights Reserved
+        Template &copy; Copyright <strong>Regna</strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!--
@@ -567,6 +564,44 @@
 
   <!-- Template Main Javascript File -->
   <script src="js/main.js"></script>
+
+  <script>
+    function loaded() {
+      $("#cForm").bind("submit", function() {
+      $.ajax({
+              type     : "POST",
+              cache    : false,
+              url      : $(this).attr('action'),
+              data     : $(this).serialize(),
+              success  : function(data) {
+                  $("#cForm")[0].reset();
+                  $("#sMessage").html("Message Sent");
+                  $("#sMessage").prop("disabled", true);
+                  $("#sMessage").removeClass("activeButton");
+
+                  setTimeout(function() {
+                    $("#sMessage").html("Send Message");
+                    $("#sMessage").prop("disabled", false);
+                    $("#sMessage").addClass("activeButton");
+                  }, 1500);
+              },
+              error: function (xhr, ajaxOptions, thrownError) {
+                  $("#sMessage").html("Message NOT Sent (Error)");
+                  $("#sMessage").prop("disabled", true);
+                  $("#sMessage").removeClass("activeButton");
+
+                  setTimeout(function() {
+                    $("#sMessage").html("Send Message");
+                    $("#sMessage").prop("disabled", false);
+                    $("#sMessage").addClass("activeButton");
+                  }, 1500);
+              }
+      });
+      return false;
+    });
+    }
+  
+  </script>
 
 </body>
 </html>
