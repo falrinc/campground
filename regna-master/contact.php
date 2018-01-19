@@ -8,9 +8,9 @@ $name = "No Name Given";
 $subject = "RE: Santa Fe River Campground";
 $message = "No Message Supplied";
 
-if(isset($_POST["name"])) $name = $_POST["name"];
-if(isset($_POST["subject"])) $name = $_POST["subject"];
-if(isset($_POST["message"])) $name = $_POST["message"];
+if(isset($_POST["name"]) && !empty($_POST["name"])) $name = $_POST["name"];
+if(isset($_POST["subject"]) && !empty($_POST["subject"])) $subject = $_POST["subject"];
+if(isset($_POST["message"]) && !empty($_POST["message"])) $message = $_POST["message"];
 
 $headers = 'MIME-VERSION: 1.0' . "\r\n";
 $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
